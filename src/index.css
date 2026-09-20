@@ -1,1 +1,201 @@
 @import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdf8f0;
+  --color-gold-100: #f9eed9;
+  --color-gold-200: #f3ddb3;
+  --color-gold-300: #e8c47a;
+  --color-gold-400: #d4a853;
+  --color-gold-500: #c49a3a;
+  --color-gold-600: #a67c2e;
+  --color-gold-700: #8a6424;
+  --color-gold-800: #6e4f1d;
+  --color-gold-900: #5a411a;
+  --color-cream-50: #fffdf7;
+  --color-cream-100: #fef9ed;
+  --color-cream-200: #fdf3dc;
+  --color-cream-300: #f8e6b8;
+  --color-cream-400: #f0d48a;
+  --color-cream-500: #e6bf5c;
+  --color-chocolate-50: #fdf6f0;
+  --color-chocolate-100: #f5e6d8;
+  --color-chocolate-200: #e8c9ad;
+  --color-chocolate-300: #d4a07a;
+  --color-chocolate-400: #b87a4f;
+  --color-chocolate-500: #9c5e35;
+  --color-chocolate-600: #7d4a2a;
+  --color-chocolate-700: #5e3820;
+  --color-chocolate-800: #3f2515;
+  --color-chocolate-900: #2a180e;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #fffdf7 0%, #fef9ed 50%, #fdf3dc 100%);
+  min-height: 100vh;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 154, 58, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(196, 154, 58, 0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s ease-in-out infinite;
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #c49a3a, #e8c47a, #d4a853, #f3ddb3, #c49a3a);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.luxury-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 154, 58, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px -12px rgba(196, 154, 58, 0.25);
+  border-color: rgba(196, 154, 58, 0.4);
+}
+
+.glass-effect {
+  background: rgba(255, 253, 247, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(196, 154, 58, 0.2);
+}
+
+.btn-luxury {
+  background: linear-gradient(135deg, #c49a3a 0%, #d4a853 50%, #e8c47a 100%);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(196, 154, 58, 0.3);
+}
+
+.btn-luxury:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 154, 58, 0.4);
+}
+
+.btn-luxury:active {
+  transform: translateY(0);
+}
+
+.text-shadow-gold {
+  text-shadow: 0 2px 10px rgba(196, 154, 58, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fef9ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c49a3a, #d4a853);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a67c2e, #c49a3a);
+}
